@@ -1,6 +1,7 @@
-let express = require('express');
-let exphbs = require('express-handlebars');
-let app = express();
+const express = require('express');
+const exphbs = require('express-handlebars');
+const app = express();
+const viewUtil = require('./utils/view-util');
 
 app.engine('handlebars', exphbs({
     defaultLayout: 'main',
@@ -15,7 +16,7 @@ app.set('port', process.env.PORT || 4000);
 app.use('/assets', express.static('dist'));
 
 // Routes
-app.get('/', (req, res) => res.render('index') );
+app.get('/', (req, res) => res.render('index', viewUtil.getContext()) );
 
 // Error handling
 
