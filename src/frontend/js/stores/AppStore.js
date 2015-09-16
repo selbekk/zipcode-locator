@@ -37,7 +37,6 @@ function askGoogle(coords) {
 function googleAnswered(info) {
     _googleInfo = info;
     AppStore.emitChange();
-    console.log('google responded', info);
 }
 
 function googleFailed(err) {
