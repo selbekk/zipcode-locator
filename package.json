@@ -1,7 +1,7 @@
 {
-  "name": "your-appname-here",
+  "name": "zipcode-locator",
   "version": "0.0.1",
-  "description": "",
+  "description": "Use your location to find the zipcode of where you're at",
   "scripts": {
     "start": "node app.js",
     "build": "npm run build:css && npm run build:js",
@@ -11,7 +11,7 @@
     "watch:css": "watch 'npm run build:css' src/frontend/less",
     "watch:js": "watchify -v -t babelify src/frontend/js/main.js -o dist/scripts.js"
   },
-  "author": "",
+  "author": "selbekk <selbeezy@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "babel": "latest",
