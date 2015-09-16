@@ -1,0 +1,31 @@
+{
+  "name": "your-appname-here",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "start": "node app.js",
+    "build": "npm run build:css && npm run build:js",
+    "build:css": "lessc src/frontend/less/main.less --autoprefix=\"last 2 versions\" dist/styles.css",
+    "build:js": "browserify src/frontend/js/main.js -t babelify -o dist/scripts.js",
+    "watch": "npm run watch:css & npm run watch:js",
+    "watch:css": "watch 'npm run build:css' src/frontend/less",
+    "watch:js": "watchify -v -t babelify src/frontend/js/main.js -o dist/scripts.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel": "latest",
+    "es6-shim": "latest",
+    "express": "latest",
+    "express-handlebars": "latest",
+    "object-assign": "latest"
+  },
+  "devDependencies": {
+    "babelify": "latest",
+    "browserify": "latest",
+    "less": "latest",
+    "less-plugin-autoprefix": "latest",
+    "watch": "latest",
+    "watchify": "latest"
+  }
+}
