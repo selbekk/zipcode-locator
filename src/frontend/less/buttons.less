@@ -1,0 +1,29 @@
+.button {
+    background-color: @color-grey-light;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 1rem 3rem;
+    transition: background-color .1s ease-out;
+
+    &:hover,
+    &:focus {
+        background-color: darken(@color-grey-light, 10%);
+    }
+}
+
+.button.mod-success {
+    background-color: @color-green;
+
+    &:hover,
+    &:focus {
+        background-color: darken(@color-green, 10%);
+    }
+}
+
+.button.mod-centered {
+    margin: 0 auto;
+}

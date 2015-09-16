@@ -28,6 +28,8 @@
     "less-plugin-autoprefix": "latest",
     "q": "^1.4.1",
     "react": "^0.13.3",
+    "react-googlemaps": "^0.4.0",
+    "reactify": "^1.1.1",
     "superagent": "^1.4.0",
     "watch": "latest",
     "watchify": "latest"

@@ -1,6 +1,7 @@
 const AppActions = require('../actions/AppActions');
 const AppStore = require('../stores/AppStore');
 const LocationInfo = require('./LocationInfo');
+const Map = require('./Map');
 const React = require('react');
 
 function getState() {
@@ -22,11 +23,20 @@ const App = React.createClass({
         AppStore.removeChangeListener(this._onChange);
     },
     render() {
+        if( this.state.location ) {
+            var map = (<Map coords={this.state.location.coords} />);
+        }
         return (
-            <div className="app-wrapper">
-                <h1>What's your zip code?</h1>
-                <button type="button" className="button mod-success" onClick={this._askForLocation}>Let's find out!</button>
-                <LocationInfo info={this.state.locationInfo} />
+            <div className="app-outer-wrapper">
+                <div className="app-wrapper">
+                    <div className="container">
+                        <h1 className="app-title">What's your postal code?</h1>
+                        <button type="button" className="button mod-success mod-centered"
+                            onClick={this._askForLocation}>Let's find out!</button>
+                        <LocationInfo info={this.state.locationInfo} />
+                    </div>
+                </div>
+                {map}
             </div>
         )
     },
