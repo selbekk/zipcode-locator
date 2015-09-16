@@ -1,10 +1,12 @@
 const AppActions = require('../actions/AppActions');
 const AppStore = require('../stores/AppStore');
+const LocationInfo = require('./LocationInfo');
 const React = require('react');
 
 function getState() {
     return {
-        location: AppStore.getLocation()
+        location: AppStore.getLocation(),
+        locationInfo: AppStore.getLocationInfo()
     };
 }
 
@@ -24,7 +26,7 @@ const App = React.createClass({
             <div className="app-wrapper">
                 <h1>What's your zip code?</h1>
                 <button type="button" className="button mod-success" onClick={this._askForLocation}>Let's find out!</button>
-
+                <LocationInfo info={this.state.locationInfo} />
             </div>
         )
     },
@@ -33,6 +35,9 @@ const App = React.createClass({
     },
     _onChange() {
         this.setState(getState());
+        if(this.state.location && !this.state.locationInfo) {
+            AppActions.askGoogle(this.state.location.coords);
+        }
     }
 });
 
