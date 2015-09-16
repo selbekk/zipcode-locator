@@ -3,6 +3,8 @@
 Been a place, and wondered what your zipcode or postal code is? This website
 figures this out for you.
 
+Live @ [bit.ly/postal-code](http://bit.ly/postal-code).
+
 ## How does it work?
 
 We ask for your location, and then we use Google's APIs to figure it out for
