@@ -23,8 +23,12 @@
   "devDependencies": {
     "babelify": "latest",
     "browserify": "latest",
+    "flux": "^2.1.1",
     "less": "latest",
     "less-plugin-autoprefix": "latest",
+    "q": "^1.4.1",
+    "react": "^0.13.3",
+    "superagent": "^1.4.0",
     "watch": "latest",
     "watchify": "latest"
   }
