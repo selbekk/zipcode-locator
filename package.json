@@ -4,9 +4,10 @@
   "description": "Use your location to find the zipcode of where you're at",
   "scripts": {
     "start": "node app.js",
-    "build": "npm run build:css && npm run build:js",
+    "build": "npm run build:css && npm run build:js && npm run build:img",
     "build:css": "lessc src/frontend/less/main.less --autoprefix=\"last 2 versions\" dist/styles.css",
     "build:js": "browserify src/frontend/js/main.js -t babelify -o dist/scripts.js",
+    "build:img": "cp -r src/frontend/img/* dist/img",
     "watch": "npm run watch:css & npm run watch:js",
     "watch:css": "watch 'npm run build:css' src/frontend/less",
     "watch:js": "watchify -v -t babelify src/frontend/js/main.js -o dist/scripts.js"
